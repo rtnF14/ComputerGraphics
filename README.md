@@ -1,4 +1,4 @@
-#Grafika Komputer
+# Grafika Komputer
 
 Implementasi algoritma dasar grafika komputer, pada framebuffer linux..
 
@@ -10,7 +10,7 @@ Untuk build :
 
 Berikut adalah modul-modul yang digunakan 
 
-##ADT Point
+## ADT Point
 Primitif untuk mengelola struktur data point.
 typedef struct {
     int x;
@@ -20,7 +20,7 @@ typedef struct {
 Point makePoint(int x, int y);
 
 
-##ADT Queue of Point
+## ADT Queue of Point
 Struktur data queue untuk elemen point
 typedef struct qi_t* qi_p;
 typedef struct qi_t {
@@ -38,7 +38,7 @@ Point nextPoint(queue* q);
 
 
 
-##ADT Color
+## ADT Color
 Primitif untuk mengelola struktur data RGB.
 typedef struct {
     int R;
@@ -51,7 +51,7 @@ int isColorSame(Color C1, Color C2);
 
 
 
-##Modul Framebuffer
+## Modul Framebuffer
 ADT untuk mengelola framebuffer.
 Membutuhkan ADT Color untuk menggunakan warna RGB.
 
@@ -69,7 +69,7 @@ Color getXY(int x, int y);
 void terminate();
 
 
-##Modul Geometry
+## Modul Geometry
 Kumpulan algoritma untuk menggambar bentuk bentuk geometri dasar.
 Setiap bentuk geometri didefinisikan dengan titik dan warnanya .
 Membutuhkan ADT Color untuk mendefinisikan warna.
@@ -83,7 +83,7 @@ void drawCircle (int radius, Point P, int W, Color C);
 void drawCircleHalf (int radius, Point P, int W, Color C);
 
 
-##Modul Transform
+## Modul Transform
 Kumpulan algoritma untuk melakukan transformasi geometri dasar.
 Membutuhkan ADT Point 
 
@@ -93,10 +93,8 @@ void ScaleLine(Point * p , double scalingFactorX , double scalingFactorY );
 void TranslationLine(Point *  p , int xTranslation, int yTranslation);
 
 
-##Modul Clipping
-Algoritma Clipping Cohen-Sutenham
-
-
+## Modul Clipping
+Algoritma Clipping Cohen-Sutherland
 
 typedef struct
 {
@@ -144,19 +142,19 @@ int isCompletelyOutside(LineAnalysisResult x);
 void clipLine(LineAnalysisResult lar1, ClippingWindow cw1 , Point * output);
 
 
-##Modul Keypress
+## Modul Keypress
 Menangani penekanan keypress
 int getch(void);
 
 
-##Modul Filling
+## Modul Filling
 Algoritma untuk melakukan color fill pada objek geometri.
 Membutuhkan modul color, point, dan pointqueue
 
 void floodFill(int fp_x, int fp_y, Color C, Color fc);
 
 
-##Modul Physics
+## Modul Physics
 Simulasi fisika "drag" & gravitasi pada titik.
 Membutuhkan ADT Point
 
@@ -170,6 +168,6 @@ void updatePhysicsPoint(PhysicsPoint* pp);
 
 
 
-##Modul Game
+## Modul Game
 Implementasi sebuah game shooter , memanfaatkan modul modul yang 
 tersedia
